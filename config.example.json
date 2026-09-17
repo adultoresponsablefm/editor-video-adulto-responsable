@@ -1,0 +1,11 @@
+{
+  "source_video": "C:\\Users\\USUARIO\\Videos\\Adulto Responsable.mp4",
+  "project_root": "C:\\Users\\USUARIO\\Documents\\Codex",
+  "work_dir": "C:\\Users\\USUARIO\\Documents\\Codex\\trabajo_AR2",
+  "reference_dir": "C:\\Users\\USUARIO\\Documents\\Codex\\assets\\referencias",
+  "asset_dir": "C:\\Users\\USUARIO\\Documents\\Codex\\assets",
+  "resolve_project": "Plantilla_Radio_YouTube",
+  "audio_target_lufs": -16,
+  "audio_true_peak_db": -1.5,
+  "timeline_fps": 60
+}

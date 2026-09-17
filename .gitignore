@@ -1,0 +1,7 @@
+trabajo_AR2/*.mp4
+trabajo_AR2/*.wav
+trabajo_AR2/*.llc
+trabajo_AR2/frames_detector_*/
+__pycache__/
+config.json
+*.log
