@@ -1,5 +1,5 @@
 """Detector visual de plecas, con muestreo fino para límites precisos."""
-import json, shutil, subprocess, tempfile
+import json, os, shutil, subprocess, tempfile
 from pathlib import Path
 import numpy as np
 from PIL import Image
@@ -32,7 +32,9 @@ def detectar(video,refs):
         return [{"start":round(b["start"],2),"end":round(b["end"],2),"duracion":round(b["end"]-b["start"],2),"razon":b["razon"],"fuente":"comparacion_visual","similitud":round(1-b["error"],4)} for b in bloques if b["end"]-b["start"]>=2]
     finally: shutil.rmtree(tmp,ignore_errors=True)
 def main():
-    candidatos=[Path(r"C:\Users\noqui\OneDrive\Desktop\Adulto Responsable\Backup Programas\Adulto Responsable 13062026.mp4"),Path(r"C:\Users\noqui\Videos\Porgramas grabados Radio Chilaquil\Adulto Responsable 13062026.mp4")]; video=next((p for p in candidatos if p.exists()),None)
+    candidatos=[]
+    if os.environ.get("EDITOR_VIDEO"): candidatos.append(Path(os.environ["EDITOR_VIDEO"]))
+    candidatos += [Path(r"C:\Users\noqui\OneDrive\Desktop\Adulto Responsable\Backup Programas\Adulto Responsable 13062026.mp4"),Path(r"C:\Users\noqui\Videos\Porgramas grabados Radio Chilaquil\Adulto Responsable 13062026.mp4")]; video=next((p for p in candidatos if p.exists()),None)
     if not video: raise FileNotFoundError("No se encontró el video fuente")
     TRABAJO.mkdir(parents=True,exist_ok=True); limpiar_versiones_anteriores(); total=float(subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","default=nw=1:nk=1",str(video)],text=True)); cortes=detectar(video,cargar_referencias())
     for c in cortes: print(f"[!] {c['razon']}: {c['start']:.1f}s -> {c['end']:.1f}s")
