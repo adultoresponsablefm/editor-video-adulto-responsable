@@ -4,7 +4,13 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 ROOT=Path(r"C:\Users\noqui\Documents\Codex"); TRABAJO=ROOT/"trabajo_AR2"; SALIDA=TRABAJO/"cortes.json"; REF=ROOT/"assets"/"referencias"; UMBRAL=.16; MUESTREO=10
-REFS={"banner_inicio.png":"banner_inicio","banner_pausa_musical.png":"pausa_musical","banner_fin_transmision.png":"fin_transmision"}
+REFS={
+    "banner_inicio.png":"banner_inicio", "banner_inicio_v2.png":"banner_inicio", "banner_inicio_original.png":"banner_inicio",
+    "banner_pausa_musical.png":"pausa_musical", "banner_pausa_musical_original.png":"pausa_musical",
+    "banner_fin_transmision.png":"fin_transmision", "banner_fin_transmision_original.png":"fin_transmision",
+    "chilaquil/inicio.png":"banner_inicio", "chilaquil/inicio_overlay.png":"banner_inicio",
+    "chilaquil/fin_overlay.png":"fin_transmision", "chilaquil/fin_transmision.png":"fin_transmision"
+}
 def limpiar_versiones_anteriores():
     for p in list(TRABAJO.glob("frames_detector_*"))+list(TRABAJO.glob("deteccion_*")):
         if p.is_dir(): shutil.rmtree(p,ignore_errors=True)

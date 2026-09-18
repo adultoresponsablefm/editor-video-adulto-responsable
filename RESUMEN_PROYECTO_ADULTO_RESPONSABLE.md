@@ -82,3 +82,7 @@ No deben subirse al repositorio videos finales grandes, WAV, credenciales, clave
 ## Regla permanente
 
 Cada nueva exportación debe nivelar el audio hablado contra los jingles, eliminar los intentos fallidos anteriores cuando exista una versión válida, y dejar siempre el resultado final visible en una timeline nueva de DaVinci Resolve.
+
+## Soluciones conocidas
+
+Consultar `SOLUCIONES_Y_LECCIONES.md` antes de modificar el flujo. Incluye la solución para clips sin waveform, puentes inactivos, caché de Resolve, perfiles de emisora y falsos positivos de rostros.
