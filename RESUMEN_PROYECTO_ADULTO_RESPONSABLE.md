@@ -10,6 +10,10 @@ Automatizar localmente la limpieza de los programas grabados de Adulto Responsab
 - Sustituir el audio de las animaciones por los jingles oficiales.
 - Nivelar el audio hablado para que no quede más bajo que los jingles.
 - Mantener video y audio sincronizados a 60 FPS.
+
+## Panel visual
+
+El panel local se inicia con `abrir_panel.ps1` o ejecutando `python panel_editor.py`. Permite seleccionar el video, abrir DaVinci y lanzar el flujo de análisis y exportación. El puente de Resolve sigue requiriendo activarse desde `Workspace > Scripts > resolve_bridge`, porque es un script interno de DaVinci y no puede ser iniciado de forma fiable desde fuera de Resolve.
 - Importar cada resultado final a DaVinci Resolve para revisión visual.
 
 ## Resultado actual
